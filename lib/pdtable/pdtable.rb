@@ -2,7 +2,7 @@ require "pdtable/version"
 require 'csv'
 
 module Pdtable
-  class Pdtable < CSV::Table
+  class Table < CSV::Table
     def initialize(path, dtype: nil, skiprows: nil)
       @table = CSV.table path
       @mode = :col_or_row
