@@ -47,6 +47,13 @@ date,datetime,integer,float,string
  => [[:date, :datetime, :integer, :float, :string], [#<DateTime: 2017-01-01T00:00:00+00:00 ((2457755j,0s,0n),+0s,2299161j)>, #<DateTime: 2017-01-01T00:00:00+00:00 ((2457755j,0s,0n),+0s,2299161j)>, 1, 1.1, "string1"], [#<DateTime: 2017-01-02T00:00:00+00:00 ((2457756j,0s,0n),+0s,2299161j)>, #<DateTime: 2017-01-02T00:00:00+00:00 ((2457756j,0s,0n),+0s,2299161j)>, 2, 2.2, "string2"], [#<DateTime: 2017-01-03T00:00:00+00:00 ((2457757j,0s,0n),+0s,2299161j)>, nil, 3, 3.3, "string3"]]
 ```
 
+`dtype` returns a hash contents column names and data classes.
+
+```ruby
+> t.dtype
+ => {:date=>DateTime, :datetime=>DateTime, :integer=>Integer, :float=>Float, :string=>String}
+```
+
 ### Options
 
 ```ruby
