@@ -1,0 +1,4 @@
+date,datetime,integer,float,string
+2017/01/01,2017/01/01T00:00:00,1,1.1,string1
+2017-01-02,2017-01-02 00:00:00,2,2.2,string2
+20170103,,3,3.3,"string3"
