@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ### Read CSV
 
-You can read CSV with `Pdtable::Pdtable.new`.
+You can read CSV with `Pdtable::Table.new`.
 
 ```sh
 $ cat test/csv/default.csv
@@ -33,8 +33,8 @@ date,datetime,integer,float,string
 ```
 
 ```ruby
-> t = Pdtable::Pdtable.new 'test/csv/default.csv'
- => #<Pdtable::Pdtable mode:col_or_row row_count:4>
+> t = Pdtable::Table.new 'test/csv/default.csv'
+ => #<Pdtable::Table mode:col_or_row row_count:4>
 
 > puts t
 date,datetime,integer,float,string
@@ -57,14 +57,14 @@ date,datetime,integer,float,string
 ### Options
 
 ```ruby
-> t = Pdtable::Pdtable.new 'test/csv/default.csv', dtype: {date: Date, float: String}
- => #<Pdtable::Pdtable mode:col_or_row row_count:4>
+> t = Pdtable::Table.new 'test/csv/default.csv', dtype: {date: Date, float: String}
+ => #<Pdtable::Table mode:col_or_row row_count:4>
 
 > t.to_a
  => [[:date, :datetime, :integer, :float, :string], [#<Date: 2017-01-01 ((2457755j,0s,0n),+0s,2299161j)>, #<DateTime: 2017-01-01T00:00:00+00:00 ((2457755j,0s,0n),+0s,2299161j)>, 1, "1.1", "string1"], [#<Date: 2017-01-02 ((2457756j,0s,0n),+0s,2299161j)>, #<DateTime: 2017-01-02T00:00:00+00:00 ((2457756j,0s,0n),+0s,2299161j)>, 2, "2.2", "string2"], [#<Date: 2017-01-03 ((2457757j,0s,0n),+0s,2299161j)>, nil, 3, "3.3", "string3"]]
 
-> t = Pdtable::Pdtable.new 'test/csv/default.csv', skiprows: 0
- => #<Pdtable::Pdtable mode:col_or_row row_count:3>
+> t = Pdtable::Table.new 'test/csv/default.csv', skiprows: 0
+ => #<Pdtable::Table mode:col_or_row row_count:3>
 
 > puts t
 date,datetime,integer,float,string
@@ -72,8 +72,8 @@ date,datetime,integer,float,string
 2017-01-03T00:00:00+00:00,,3,3.3,string3
  => nil
 
-> t = Pdtable::Pdtable.new 'test/csv/default.csv', skiprows: [1, 2]
- => #<Pdtable::Pdtable mode:col_or_row row_count:2>
+> t = Pdtable::Table.new 'test/csv/default.csv', skiprows: [1, 2]
+ => #<Pdtable::Table mode:col_or_row row_count:2>
 
 > puts t
 date,datetime,integer,float,string
